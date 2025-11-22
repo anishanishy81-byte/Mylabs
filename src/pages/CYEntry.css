@@ -1,0 +1,66 @@
+/* Import base styles from HEntry */
+@import './HEntry.css';
+
+/* CY-specific color variations */
+.header-badge.cy {
+  background: rgba(147, 51, 234, 0.1);
+  border-color: rgba(147, 51, 234, 0.2);
+}
+
+.header-badge.cy .badge-number {
+  color: #9333ea;
+}
+
+.success-icon-wrapper.cy {
+  background: rgba(147, 51, 234, 0.1);
+}
+
+.success-icon-wrapper.cy .success-icon {
+  color: #9333ea;
+}
+
+/* Info Banner */
+.info-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(var(--color-teal-500-rgb), 0.08);
+  border: 1px solid rgba(var(--color-teal-500-rgb), 0.2);
+  border-radius: 10px;
+  margin-top: 24px;
+}
+
+.info-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary);
+}
+
+.info-text {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.info-text strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-banner {
+    padding: 14px 16px;
+  }
+
+  .info-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .info-text {
+    font-size: 13px;
+  }
+}

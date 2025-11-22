@@ -1,0 +1,50 @@
+/* Import base styles from PatientsH */
+@import './PatientsH.css';
+
+/* GP-specific color variations */
+.stat-badge.gp {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.stat-badge.gp .stat-number {
+  color: #22c55e;
+}
+
+.btn-download.gp {
+  background: #22c55e;
+}
+
+.btn-download.gp:hover {
+  background: #16a34a;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.gp-number {
+  font-family: var(--font-family-mono);
+  font-weight: 600;
+  color: #22c55e;
+}
+
+.clinical-info {
+  max-width: 300px;
+}
+
+.clinical-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-data-text {
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .clinical-info {
+    max-width: 200px;
+  }
+}

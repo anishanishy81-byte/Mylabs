@@ -1,0 +1,184 @@
+.searchable-select {
+  position: relative;
+  width: 100%;
+}
+
+.searchable-select__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.searchable-select__input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  padding-right: 2.5rem;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.searchable-select__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.searchable-select__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchable-select__toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 var(--space-3);
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-base);
+}
+
+.searchable-select__toggle:hover {
+  color: var(--color-text);
+}
+
+.searchable-select__dropdown {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  z-index: 1000;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.searchable-select__options {
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+.searchable-select__option {
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.searchable-select__option:hover,
+.searchable-select__option.highlighted {
+  background-color: var(--color-primary-50);
+}
+
+.searchable-select__option.selected {
+  background-color: var(--color-primary-100);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-700);
+}
+
+.searchable-select__no-results {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.searchable-select__footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-2);
+}
+
+.searchable-select__add-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-base);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.searchable-select__add-btn:hover {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary);
+  border-style: solid;
+}
+
+.searchable-select__add-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+/* Scrollbar for dropdown */
+.searchable-select__options::-webkit-scrollbar {
+  width: 8px;
+}
+
+.searchable-select__options::-webkit-scrollbar-track {
+  background: var(--color-surface-secondary);
+  border-radius: var(--radius-base);
+}
+
+.searchable-select__options::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: var(--radius-base);
+}
+
+.searchable-select__options::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .searchable-select__option:hover,
+  .searchable-select__option.highlighted {
+    background-color: var(--color-gray-700);
+  }
+
+  .searchable-select__option.selected {
+    background-color: var(--color-primary-900);
+    color: var(--color-primary-300);
+  }
+
+  .searchable-select__add-btn:hover {
+    background: var(--color-gray-800);
+  }
+}
