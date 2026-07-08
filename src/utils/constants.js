@@ -4,7 +4,8 @@ export const ALLOWED_USERS = {
   'sharanns1204@gmail.com': 'user',
   'anishrajpurohit0@gmail.com': 'user',
   'draparnagangoli@gmail.com': 'admin',
-  'udaigiris@gmail.com': 'user'
+  'udaigiris@gmail.com': 'user',
+  'sarathy@phoenix.com': 'user'
 };
 
 export const HOSPITALS = [
